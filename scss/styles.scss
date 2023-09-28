@@ -1,0 +1,629 @@
+/* fira-sans-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/fira-sans-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* fira-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/fira-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* cormorant-garamond-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/cormorant-garamond-v16-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+$black:#191919;
+
+  html{
+box-sizing: border-box;
+}
+
+*,*:after,*:before{
+    box-sizing: inherit;
+}
+
+a{
+    text-decoration: none;
+    color:inherit
+}
+
+li{
+    list-style: none;
+}
+
+html,body{
+    height:100%;
+}
+
+.section__title{
+    font-family: 'Cormorant Garamond';
+    font-size: 48px;
+    font-weight: 700;
+}
+
+
+
+body{
+    color:$black;
+    line-height: 140%;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Fira Sans';
+    overflow-x: hidden;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+min-height: 100%;
+}
+
+.main{
+    flex-grow:1;
+}
+
+.container{
+    max-width:1320px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.image--active{
+    width:50%;
+}
+
+.image--active-low{
+    width:104px;
+    height:80px;
+    border-radius: 5px;
+}
+// header styles start
+.header{
+
+    background-color: $black;
+    color:white;
+   &__burger{
+    display:none;
+   }
+&__title{
+    padding-right: 30px;
+}
+    &__burger-line{
+        content:' ';
+        width:30px;
+        height: 3px;
+        background-color:white;
+    }
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        padding: 32px 0;
+    }
+    &__list{
+        display: flex;
+        gap: 20px;
+position: relative;
+    }
+
+    &__list-link{
+        font-weight: 600;
+    }
+&__list-link::after{
+content:url(../images/svg/rectangle.svg);
+padding-left:20px;
+}
+
+&__list-link--last::after{
+content:none;
+}
+}
+
+// header end
+// main start
+
+.main{
+    background-color: #EDEDED;
+}
+// slider styles start
+.slider{
+    padding-top: 60px;
+    margin-bottom: 184px;
+    &__inner{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 24px;
+    }
+    &__block-item{
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        background-color: #fff;
+        border-radius: 8px;
+background: rgba(25, 25, 25, 0.05);
+    }
+    &__blocks-pic{
+        padding-right: 24px;
+    }
+    &__blocks-text{
+        font-weight: 600;
+    }
+}
+
+.first-block{
+    margin-bottom: 16px;
+}
+
+// slider styles end
+
+// poster start
+.poster{
+margin-bottom: 136px;
+
+&__header{
+display:flex;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 100px;
+}
+
+&__events{
+display: flex;
+gap: 32px;
+align-items: center;
+&-text{
+    font-family: 'Cormorant Garamond';
+    font-size: 24px;
+    font-weight: 700;
+}
+}
+&__cards{
+    gap: 80px;
+    display: flex;
+    flex-direction: column;
+}
+&__card{
+    border-radius: 16px;
+background: rgba(25, 25, 25, 0.05);
+&-wrapper{
+    padding: 60px 32px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:62px;
+}
+}
+&__date{
+    font-size: 64px;
+    font-weight: 700;
+    opacity: .75;
+    text-align: center;
+    align-self: center;
+    gap:0 16px;
+}
+&__about{
+    &-title{
+        font-family: 'Cormorant Garamond';
+        font-size: 32px;
+        font-weight: 700;
+        color:$black;
+    }
+    &-subtitle{
+        opacity: .75;
+        padding: 16px 0 40px 0;
+        line-height: 1.4;
+    }
+    &-more{
+        display:flex;
+        gap:0 30px;
+    }
+    &-more-info{
+display:flex;
+align-items: center;
+gap:20px;
+    }
+    &-more-text{
+        opacity: .75;
+        line-height: 1.4;
+    }
+}
+&__button{
+    padding:15px 30px 14px 30px;
+    border-radius: 50px;
+    background: #05B093;
+    color:white;
+    font-weight: 600;
+    border:none;
+    &-inner{
+        display:flex;
+        align-items: center;
+    }
+}
+}
+// poster end
+
+// news start
+.news{
+    margin-bottom: 160px;
+    &__inner{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 134px;
+    }
+    &__title{
+        padding-bottom: 60px;
+    }
+    &__about-inner{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:0 24px;
+    }
+    &__about-img{
+        padding-bottom: 32px;
+    }
+    &__about-title{
+        font-size: 24px;
+        font-weight: 700;
+        font-family: 'Cormorant Garamond';
+        padding-bottom: 24px;
+        line-height: 140%;
+    }
+    &__about-subtitle{
+        opacity: .75;
+        max-width:306px;
+        font-family: 'Fira Sans';
+    line-height: 140%;
+    }
+}
+.news__calendar{
+    &-list-item{
+        cursor: pointer;
+    }
+    &-title{
+        background-image: url(../images/news-calendar.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 300px;
+        width:526px;
+        position: relative;
+    }
+    &-title-text{
+        color:white;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.4;
+        font-family:'Cormorant Garamond';
+        position: absolute;
+bottom:24px;
+left:24px;
+    }
+    &-inner{
+        padding: 24px;
+        background-color: rgba(25, 25, 25, 0.05);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    &-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-data{
+        font-size: 32px;
+        line-height: 1.4;
+        font-weight: 700;
+        font-family: 'Cormorant Garamond';
+    }
+    &-btns{
+        gap: 8px;
+    }
+    &-btn{
+        border:none;
+        border-radius: 8px;
+        padding: 12px;
+        color:white;
+        background-color: #05B093;
+    }
+    &-right{
+        width:390px;
+        overflow: hidden;
+        transition: .5s;
+    }
+    &-inner__list{
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        width:500px;
+        transition:.5s;
+    }
+    &-list-item{
+        padding: 10px;
+        background-color: rgba(25, 25, 25, 0.30);
+        margin: 4px;
+        color:white;
+        font-weight: 600;
+        line-height: 1.4;
+        min-width:40px;
+        min-height: 40px;
+        text-align: center;
+    }
+
+    &--list-item--active{
+        background-color: #05B093;
+    }
+}
+// news end
+// anons start
+.annons{
+    margin-bottom: 150px;
+    &__inner{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    &__inner-item{
+        display: flex;
+        align-items: center;
+        gap: 27px;
+    }
+    &__inner-data{
+        background-color: #05B093;
+        border-radius: 12px;
+        padding: 16px 20px;
+        max-height: 80px;
+        max-width: 80px;
+        text-align: center;
+        color:white;
+    }
+
+    &__inner-first{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &__inner-second{
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Cormorant Garamond';
+    }
+    &__inner-name{
+        font-weight: 600;
+        padding-left: 12px;
+    }
+}
+// anons end
+
+// footer start
+.footer{
+background-color: #191919;
+color:white;
+padding: 60px 0 32px 0;
+&__inner{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255,255, 0.5);
+}
+&_inner-block{
+    align-self: self-start;
+    
+}
+&__inner-title-first{
+    font-size: 15px;
+    font-weight: 700;
+}
+&__inner-title{
+font-family:'Cormorant Garamond';
+    font-weight: 700;
+    font-size: 24px;
+
+    padding-bottom: 32px;
+}
+&__inner-texts{
+    display: flex;
+    gap: 24px;
+}
+&__inner-contacts-text{
+    padding-bottom: 24px;
+}
+&__inner-contacts-text:last-child{
+    padding-bottom: 0;
+}
+&__inner-contacts-text:nth-child(2){
+    text-decoration: underline;
+}
+&__text{
+    padding-top: 32px;
+    opacity: .5;
+    text-align: center;
+}
+}
+// footer end
+
+// media
+@media screen and (max-width:1400px){
+    .news__inner{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media screen and (max-width:1200px){
+   .header__list{
+    position: absolute;
+    top:80px;
+    right:0;
+    display:flex;
+    flex-direction: column;
+    background-color: #191919;
+    transform: translateX(100%);
+    transition: .5s;
+   } 
+   .header__list-link{
+    font-size: 40px;
+   }
+   .header__list-link::after{
+    content:none;
+   }
+   .header__burger{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+cursor: pointer;
+   }
+   .header__list--active{
+    transform: translateX(0%);
+   }
+   .slider__inner{
+    grid-template-columns: repeat(1,1fr);
+   }
+   .slider__block-item{
+    max-width: 320px;
+   }
+   .slider__block{
+    display:flex;
+    justify-content: space-around;
+   }
+   .slider__main-image{
+    justify-self: center;
+   }
+   .poster__card-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 520px;
+   }
+
+   .poster__card{
+    max-width:540px;
+    margin:0 auto;
+   }
+   .news__about-inner{
+    display:flex;
+    justify-content: space-between;
+   }
+   .news__calendar-title{
+    min-height: 300px;
+    max-width: 600px;
+    margin: 0 auto;}
+}
+
+@media screen and (max-width:1020px){
+    .footer__inner{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:930px){
+    .annons__inner{
+        grid-template-columns: repeat(2,1fr);
+        gap:20px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .slider__main-image{
+        max-width:540px;
+    }
+    .slider__block{
+        flex-direction: column;
+    }
+}
+
+@media screen  and (max-width:860px){
+    .footer__inner{
+        grid-template-columns: repeat(1,1fr);
+        text-align: center;
+    }
+    .footer__inner-texts {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer__inner-title{
+        padding-top: 50px;
+    }
+    .news__calendar-inner{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media screen and(max-width:800px) {
+    .news__about-inner{
+        flex-direction: column;
+align-items: center;
+    }
+    .news__about-card:first-child{
+        padding-bottom: 20px;
+
+    }
+}
+
+@media screen and(max-width:640px) {
+    .news__calendar-btn{
+        display:none;
+    }
+    .news__calendar-list{
+        padding-bottom: 30px;
+    display:flex;
+    justify-content: center;
+    }
+    .news__calendar-inner__list{
+        display:block;
+    }
+.news__calendar-list-item{
+    max-width:40px;
+}
+.news__calendar-title{
+    width:300px;
+    margin: 0;;
+}
+}
+
+@media screen and(max-width:600px){
+    .slider__main-image{
+        max-width:300px;
+    }
+    .annons__inner{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media screen and(max-width:550px){
+    .poster__card-wrapper{
+        width:300px;
+    }
+    .poster__image-pic{
+        width:270px;
+    }
+    .poster__about-title{
+        font-size: 27px;
+    }
+    .poster__about-more{
+        flex-direction: column;
+    }
+}
+@media screen and(max-width:475px){
+    .news__calendar-list{
+        justify-content: flex-start;
+    } 
+    .poster__header{
+        flex-direction: column;
+    }
+    .section__title{
+        padding-bottom: 50px;
+    }
+}
+@media screen and(max-width:350px){
+    .news__about-subtitle{
+        max-width:300px;
+    }
+    .news__about-img{
+        width:270px;
+    }
+}
