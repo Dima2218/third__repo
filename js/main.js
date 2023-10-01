@@ -37,6 +37,13 @@
     scrollTo();
 }());
 
+(function(){
+ const list = document.querySelectorAll('.news__calendar-list-item');
+ list.forEach(i => i.addEventListener('click',()=>{
+    i.classList.toggle('news__calendar--list-item--active');
+ }))
+}())
+
 const sliderMainPic = document.querySelector('.slider__main-image');
 const sliderPics = document.querySelectorAll('.slider__blocks-pics');
 const sliderButtonFirst = document.querySelector('.first-block');
